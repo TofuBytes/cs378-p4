@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import {List} from "./List";
+
+
 
 export const Input = (props) => {
 
@@ -12,6 +15,9 @@ export const Input = (props) => {
 
     return(
         <div className="Input">
+            <div>
+                <h4>Hi, you are currently not logged in</h4>
+            </div>
             <h4>
                 Log in
             </h4>
@@ -32,6 +38,10 @@ export const Input = (props) => {
                 />
             </div>
             <button className="btn" onClick={() => {userLogin()}}>Sign in</button>
+            <div className="List">
+                <List
+                    uid={''}/>
+            </div>
         </div>
     )
 

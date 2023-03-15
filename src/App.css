@@ -41,8 +41,22 @@
   color: #61dafb;
 }
 
+.Show{
+  padding: 15px;
+  align-items: center;
+}
+
+.addItem{
+  padding: 10px;
+}
+
 .ShopList{
-  padding-top: 10px;
+  align-items: center;
+}
+
+ul {
+  display: table;
+  padding-left: 45%;
 }
 
 @keyframes App-logo-spin {
@@ -52,6 +66,7 @@
   to {
     transform: rotate(360deg);
   }
+
 }
 
 

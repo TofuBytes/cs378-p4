@@ -9,36 +9,37 @@ import "../App.css";
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 function Login(){
-    //const [user, setUser] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const auth = getAuth(app);
     const[user] = useAuthState(auth);
+    const [person, setPerson] = useState('');
+    const [unknown, setUnknown] = useState(true);
     //useAuthState(auth);
     //const [person] = useState('');
 
 
     const userLogin = () => {
         signInWithEmailAndPassword(auth, email, password);
-        
     }
 
     const userLogout =() => {
         reset();
-        signOut();
+        auth.signOut();
         reset();
     }
 
     const reset = () => {
+        setPerson("")
         setEmail("")
         setPassword("")
     }
+        
         
     return (
         <div className="App">
             <div className="Login">
                 <div className="container">
-                    <h3>Hi, You are not logged in</h3>
                     {user ? 
                         (<Logout
                             userLogout={userLogout}
@@ -50,7 +51,8 @@ function Login(){
                             setEmail={setEmail}
                             password={password}
                             setPassword={setPassword}
-                            userLogin={userLogin}/>)}
+                            userLogin={userLogin}/>
+                            )}
                 </div>
             </div>
         </div>
